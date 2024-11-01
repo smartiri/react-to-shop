@@ -20,7 +20,7 @@ const Cards = memo(function Cards({
   description = "",
 }) {
   const [quantity, setQuantity] = useState(1);
-  const { cartItems, addToCart } = useCart();
+  const { addToCart } = useCart();
 
   const navigate = useNavigate();
 
@@ -52,7 +52,6 @@ const Cards = memo(function Cards({
       },
       quantity
     );
-    console.log(cartItems);
   };
   const handleDetails = () => {
     navigate(`/details/${id}`, {
@@ -85,31 +84,29 @@ const Cards = memo(function Cards({
         >
           {price}€
         </Typography>
-        <Typography style={{ display: "flex", justifyContent: "center" }}>
-          <Box display="flex" alignItems="center" gap={1}>
-            <Button
-              variant="contained"
-              onClick={handleDecrease}
-              style={{ backgroundColor: "#3f4c6b" }}
-            >
-              -
-            </Button>
-            <TextField
-              type="tel"
-              value={quantity}
-              onChange={handleChange}
-              sx={{ width: 50, height: 60 }}
-              style={{ border: "none" }}
-            />
-            <Button
-              variant="contained"
-              onClick={handleIncrease}
-              style={{ backgroundColor: "#3f4c6b" }}
-            >
-              +
-            </Button>
-          </Box>
-        </Typography>
+        <Box display="flex" alignItems="center" gap={1}>
+          <Button
+            variant="contained"
+            onClick={handleDecrease}
+            style={{ backgroundColor: "#3f4c6b" }}
+          >
+            -
+          </Button>
+          <TextField
+            type="tel"
+            value={quantity}
+            onChange={handleChange}
+            sx={{ width: 50, height: 60 }}
+            style={{ border: "none" }}
+          />
+          <Button
+            variant="contained"
+            onClick={handleIncrease}
+            style={{ backgroundColor: "#3f4c6b" }}
+          >
+            +
+          </Button>
+        </Box>
       </CardContent>
       <CardActions>
         <Button

@@ -1,4 +1,4 @@
-import { Grid2 } from "@mui/material";
+import { Button, Grid2 } from "@mui/material";
 import { useCart } from "../the_context/CartContext";
 import { useTheme } from "../the_context/ThemeContext";
 function Header() {
@@ -24,8 +24,7 @@ function Header() {
               style={{ float: "right" }}
             />
           </a>
-          <a
-            href="#"
+          <Button
             style={{ color: "white", cursor: "pointer" }}
             onClick={toggleTheme}
           >
@@ -36,7 +35,7 @@ function Header() {
               alt="moon"
               width={"50"}
             />
-          </a>
+          </Button>
         </Grid2>
       </Grid2>
     </div>

@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, colors } from "@mui/material";
 import { useCart } from "../the_context/CartContext";
 import "../App.css";
 import { useState } from "react";
@@ -64,9 +64,9 @@ const CartDetails = () => {
           </Button>
         )}
         {completeCheckout && (
-          <p style={{ textAlign: "center" }}>
+          <h1 style={{ textAlign: "center" }}>
             THANK YOU FOR PURCHASING ON OUR HUMBLE STORE
-          </p>
+          </h1>
         )}
       </div>
     </div>
