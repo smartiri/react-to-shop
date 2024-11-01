@@ -8,11 +8,17 @@ import {
   TextField,
   Box,
 } from "@mui/material";
-import { useState } from "react";
+import { useState, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../the_context/CartContext";
 
-const Cards = ({ id, name, image, price, description = "" }) => {
+const Cards = memo(function Cards({
+  id,
+  name,
+  image,
+  price,
+  description = "",
+}) {
   const [quantity, setQuantity] = useState(1);
   const { cartItems, addToCart } = useCart();
 
@@ -123,6 +129,6 @@ const Cards = ({ id, name, image, price, description = "" }) => {
       </CardActions>
     </Card>
   );
-};
+});
 
 export default Cards;
