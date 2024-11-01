@@ -1,10 +1,9 @@
 import { Grid2 } from "@mui/material";
 import { useCart } from "../the_context/CartContext";
 import { useTheme } from "../the_context/ThemeContext";
-import { Button } from "@mui/material";
 function Header() {
   const { cartItems } = useCart();
-  const { toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   return (
     <div className="header">
       <Grid2 container spacing={2} columns={16}>
@@ -25,14 +24,19 @@ function Header() {
               style={{ float: "right" }}
             />
           </a>
-          <Button
-            size="small"
-            style={{ color: "white" }}
-            variant="outlined"
+          <a
+            href="#"
+            style={{ color: "white", cursor: "pointer" }}
             onClick={toggleTheme}
           >
-            Theme
-          </Button>
+            <img
+              src={
+                theme === "light" ? "/assets/moon.png" : "/assets/moon-dark.png"
+              }
+              alt="moon"
+              width={"50"}
+            />
+          </a>
         </Grid2>
       </Grid2>
     </div>
